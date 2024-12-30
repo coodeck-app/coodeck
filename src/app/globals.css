@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+section {
+  scroll-margin-top: 4rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.card-animation {
+  transition: transform 0.3s;
+}
+
+.card-animation:hover {
+  transform: translateY(-5px);
+}
+
+.MuiCard-root {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.gradient-text {
+  background: linear-gradient(45deg, #2196F3, #21CBF3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
