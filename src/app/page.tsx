@@ -9,6 +9,7 @@ import ServiceCard from '@/components/Cards';
 import WorkIcon from '@mui/icons-material/Work';
 import EmailIcon from '@mui/icons-material/Email';
 import Image from 'next/image';
+import { metadata } from './metadata';
 
 export default function Home() {
   return (

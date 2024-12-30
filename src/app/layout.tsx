@@ -1,6 +1,5 @@
 'use client';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
@@ -40,11 +39,6 @@ const theme = createTheme({
     },
   },
 });
-
-export const metadata: Metadata = {
-  title: "Coodeck",
-  description: "freelancing platform for Africa",
-};
 
 export default function RootLayout({
   children,
