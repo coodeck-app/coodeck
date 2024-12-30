@@ -1,3 +1,4 @@
+"use client";
 import { Container, Typography, Box, Grid, IconButton } from '@mui/material';
 import { motion } from 'framer-motion';
 import CodeIcon from '@mui/icons-material/Code';
