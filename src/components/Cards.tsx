@@ -16,15 +16,17 @@ export default function ServiceCard({ title, description, icon, delay = 0 }: Car
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay }}
       viewport={{ once: true }}
+      className="hover-lift"
     >
       <Card
+        className="glass-effect"
         sx={{
-          maxWidth: 345,
-          m: 2,
-          transition: '0.3s',
+          maxWidth: { xs: '100%', sm: '345px' },
+          m: { xs: 1, sm: 2 },
+          transition: 'all 0.3s ease',
           '&:hover': {
             transform: 'translateY(-8px)',
-            boxShadow: 6,
+            background: 'rgba(255,255,255,0.15)',
           },
         }}
       >
