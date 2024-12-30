@@ -133,33 +133,48 @@ export default function Home() {
           <Typography variant="h3" align="center" gutterBottom>
             Featured Projects
           </Typography>
-          <Grid container spacing={4}>
-            {[1, 2, 3].map((item) => (
-              <Grid item xs={12} md={4} key={item}>
-                <motion.div
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: item * 0.1 }}
-                >
-                  <Paper
-                    sx={{
-                      p: 3,
-                      height: '100%',
-                      '&:hover': { transform: 'translateY(-8px)', transition: '0.3s' }
-                    }}
+          <motion.div
+            className="project-slider"
+            animate={{ x: [0, -1200, 0] }}
+            transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+            style={{ overflow: "hidden" }}
+          >
+            <Grid container spacing={4}>
+              {[1, 2, 3].map((item) => (
+                <Grid item xs={12} md={4} key={item}>
+                  <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: item * 0.1 }}
                   >
-                    <WorkIcon sx={{ fontSize: 40, color: 'primary.main', mb: 2 }} />
-                    <Typography variant="h6" gutterBottom>
-                      Project {item}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      Description of successful project completed through Coodeck.
-                    </Typography>
-                  </Paper>
-                </motion.div>
-              </Grid>
-            ))}
-          </Grid>
+                    <Paper
+                      sx={{
+                        p: 3,
+                        height: '100%',
+                        '&:hover': { transform: 'translateY(-8px)', transition: '0.3s' }
+                      }}
+                    >
+                      <WorkIcon sx={{ fontSize: 40, color: 'primary.main', mb: 2 }} />
+                      <Typography variant="h6" gutterBottom>
+                        {item === 1
+                          ? "Project Aurora"
+                          : item === 2
+                          ? "Project Catalyst"
+                          : "Project Phoenix"}
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        {item === 1
+                          ? "A sleek microservices platform for streaming data in real-time."
+                          : item === 2
+                          ? "An AI-powered design solution improving client-freelancer collaborations."
+                          : "A scalable ERP system helping businesses streamline their operations."}
+                      </Typography>
+                    </Paper>
+                  </motion.div>
+                </Grid>
+              ))}
+            </Grid>
+          </motion.div>
         </Container>
       </Box>
 
